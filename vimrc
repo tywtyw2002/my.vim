@@ -1,3 +1,6 @@
+"include bundles
+source ~/.vim/bundles.vim
+
 syntax on
 set history=700
 set tabstop=4
@@ -19,8 +22,7 @@ set foldmethod=indent
 set laststatus=2
 set nocompatible
 
-"include bundles
-source ~/.vim/bundles.vim
+
 
 
 "file type and indent
@@ -81,6 +83,9 @@ set t_Co=256
 
 if has("gui_running")
 "    set gfn=Monospace\ 10
+    set go=aAce              " 去掉难看的工具栏和滑动条
+    set transparency=20   
+    set showtabline=2
     colorscheme twilight
 endif
 
