@@ -84,7 +84,6 @@ set t_Co=256
 if has("gui_running")
 "    set gfn=Monospace\ 10
     set go=aAce              " 去掉难看的工具栏和滑动条
-    set transparency=20   
     set showtabline=2
     colorscheme twilight
 endif
@@ -135,7 +134,36 @@ map <C-t> :NERDTree<cr>
 map <C-z> :Pydoc 
 map <C-x> za
 
+" Tagbar
+let g:tagbar_left=1
+let g:tagbar_width=30
+let g:tagbar_autofocus = 1
+let g:tagbar_sort = 0 
+let g:tagbar_compact = 1
+" tag for coffee
+if executable('coffeetags')
+  let g:tagbar_type_coffee = {
+        \ 'ctagsbin' : 'coffeetags',
+        \ 'ctagsargs' : '',
+        \ 'kinds' : [
+        \ 'f:functions',
+        \ 'o:object',
+        \ ],
+        \ 'sro' : ".",
+        \ 'kind2scope' : {
+        \ 'f' : 'object',
+        \ 'o' : 'object',
+        \ }
+        \ }
 
+  let g:tagbar_type_markdown = {
+    \ 'ctagstype' : 'markdown',
+    \ 'sort' : 0,
+    \ 'kinds' : [
+        \ 'h:sections'
+    \ ]
+    \ }
+endif
 
 " Nerd Tree 
 let NERDChristmasTree=0
