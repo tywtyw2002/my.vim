@@ -109,7 +109,7 @@ filetype indent on
 filetype plugin indent on
 
 
-nnoremap <buffer> <F5> :w<CR>:!/usr/bin/env python % <CR>
+nnoremap <buffer> <F5> :w<CR>:!/usr/bin/env python3 % <CR>
 nnoremap <buffer> <F7> :w<CR>:!aspell -c %<CR>
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 nnoremap <F3> :set noautoindent!<CR>:set nosmartindent!<CR>
