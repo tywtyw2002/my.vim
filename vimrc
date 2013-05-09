@@ -93,8 +93,8 @@ endif
 
 " Set font according to system
 if has("mac") || has("macunix")
-    set gfn=Menlo:h14
-    set shell=/bin/bash
+    set gfn=Menlo:h12
+    set shell=/bin/zsh
 elseif has("win16") || has("win32")
     set gfn=Bitstream\ Vera\ Sans\ Mono:h10
     colorscheme twilight
