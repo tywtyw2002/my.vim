@@ -214,27 +214,10 @@ let g:rbpt_colorpairs = [
     \ ]
 let g:rbpt_max = 16
 autocmd Syntax lisp,scheme,clojure,racket RainbowParenthesesToggle
+"nerd commit
+let mapleader=","
+map <c-h> ,c<space>
 
-
-""Format the statusline
-""Nice statusbar
-"set statusline=
-"set statusline+=%2*%-3.3n%0*\ " buffer number
-"set statusline+=%f\ " file name
-"set statusline+=%h%1*%m%r%w%0* " flag
-"set statusline+=[
-"if v:version >= 600
-"set statusline+=%{strlen(&ft)?&ft:'none'}, " filetype
-"set statusline+=%{&encoding}, " encoding
-"endif
-"set statusline+=%{&fileformat}] " file format
-"if filereadable(expand("$VIM/vimfiles/plugin/vimbuddy.vim"))
-"set statusline+=\ %{VimBuddy()} " vim buddy
-"endif
-"set statusline+=%= " right align
-""set statusline+=%2*0x%-8B\ " current char
-"set statusline+=0x%-8B\ " current char
-"set statusline+=%-14.(%l,%c%V%)\ %<%P " offset
 " NeoComplCache
 set completeopt-=preview
 let g:neocomplcache_enable_at_startup=1
@@ -247,7 +230,6 @@ smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
 
 
-
 " SuperTab
 let g:SuperTabDefaultCompletionType="<c-n>"
 " SuperTab like snippets behavior.
@@ -258,8 +240,8 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 \ "\<Plug>(neosnippet_expand_or_jump)"
 \: "\<TAB>"
 
-" For snippet_complete marker.
-if has('conceal')
-  set conceallevel=2 concealcursor=i
-endif
-  "
+"UltiSnips
+"let g:UltiSnipsExpandTrigger="<c-j>"
+"let g:UltiSnipsJumpForwardTrigger="<c-j>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
