@@ -4,7 +4,7 @@ nnoremap <buffer> <silent> K :call ShowPyDoc(expand("<cword>"), 1)
 let s:cpo_save=&cpo
 set cpo&vim
 nnoremap <buffer> <F7> :w:!aspell -c %
-nnoremap <buffer> <F5> :w:!/usr/bin/env python % 
+nnoremap <buffer> <F5> :w:!/usr/bin/env python3 % 
 let &cpo=s:cpo_save
 unlet s:cpo_save
 setlocal autoindent
@@ -100,12 +100,12 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 35 - ((7 * winheight(0) + 11) / 22)
+let s:l = 31 - ((3 * winheight(0) + 5) / 10)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-35
-normal! 014l
+31
+normal! 045l
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 " vim: set ft=vim :

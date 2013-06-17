@@ -5,8 +5,8 @@ nnoremap <buffer> C :BundleClean!
 nnoremap <buffer> D :exec 'Delete'.getline('.')
 nnoremap <buffer> I :exec 'InstallAndRequire'.substitute(getline('.'), '^Bundle ', 'Bundle! ', '')
 nnoremap <buffer> R :call vundle#scripts#reload()
-nnoremap <buffer> add! :exec 'Install'.substitute(getline('.'), '^Bundle ', 'Bundle! ', '')
 nnoremap <buffer> add :exec 'Install'.getline('.')
+nnoremap <buffer> add! :exec 'Install'.substitute(getline('.'), '^Bundle ', 'Bundle! ', '')
 nnoremap <buffer> c :BundleClean
 nnoremap <buffer> h :h vundle
 nnoremap <buffer> i :exec 'InstallAndRequire'.getline('.')
@@ -14,10 +14,7 @@ nnoremap <buffer> l :VundleLog
 nnoremap <buffer> q :silent bd!
 nnoremap <buffer> s :BundleSearch 
 nnoremap <buffer> u :VundleChangelog
-setlocal keymap=
-setlocal noarabic
 setlocal autoindent
-setlocal balloonexpr=
 setlocal nobinary
 setlocal bufhidden=
 setlocal buflisted
@@ -30,8 +27,6 @@ setlocal colorcolumn=
 setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
 setlocal commentstring=/*%s*/
 setlocal complete=.,w,b,u,t,i
-setlocal concealcursor=
-setlocal conceallevel=0
 setlocal completefunc=
 setlocal nocopyindent
 setlocal cryptmethod=
@@ -61,8 +56,8 @@ setlocal formatexpr=
 setlocal formatoptions=tcq
 setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
 setlocal grepprg=
-setlocal iminsert=2
-setlocal imsearch=2
+setlocal iminsert=0
+setlocal imsearch=0
 setlocal include=
 setlocal includeexpr=
 setlocal indentexpr=
@@ -87,18 +82,16 @@ setlocal previewwindow
 setlocal quoteescape=\\
 setlocal readonly
 setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
 setlocal noscrollbind
 setlocal shiftwidth=4
 setlocal noshortname
 setlocal smartindent
 setlocal softtabstop=0
 setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
+setlocal spellcapcheck=
 setlocal spellfile=
 setlocal spelllang=en
-setlocal statusline=
+setlocal statusline=%!Pl#Statusline(0,0)
 setlocal suffixesadd=
 setlocal noswapfile
 setlocal synmaxcol=3000
@@ -114,11 +107,11 @@ setlocal winfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 37 - ((20 * winheight(0) + 11) / 22)
+let s:l = 38 - ((20 * winheight(0) + 11) / 22)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-37
+38
 normal! 0
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost

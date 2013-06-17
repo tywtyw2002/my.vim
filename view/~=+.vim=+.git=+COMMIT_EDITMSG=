@@ -1,16 +1,43 @@
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 argglobal
-nnoremap <buffer> <silent> K :call ShowPyDoc(expand("<cword>"), 1)
 let s:cpo_save=&cpo
 set cpo&vim
+imap <buffer> <RightMouse> <Plug>delimitMateMRightMouse
+imap <buffer> <LeftMouse> <Plug>delimitMateMLeftMouse
+imap <buffer> <S-Up> <Plug>delimitMateS-Up
+imap <buffer> <S-Down> <Plug>delimitMateS-Down
+imap <buffer> <PageDown> <Plug>delimitMatePageDown
+imap <buffer> <PageUp> <Plug>delimitMatePageUp
+imap <buffer> <Down> <Plug>delimitMateDown
+imap <buffer> <Up> <Plug>delimitMateUp
+imap <buffer> <C-Right> <Plug>delimitMateC-Right
+imap <buffer> <C-Left> <Plug>delimitMateC-Left
+imap <buffer> <End> <Plug>delimitMateEnd
+imap <buffer> <Home> <Plug>delimitMateHome
+imap <buffer> <Right> <Plug>delimitMateRight
+imap <buffer> <Left> <Plug>delimitMateLeft
+imap <buffer> <Del> <Plug>delimitMateDel
+imap <buffer> <S-BS> <Plug>delimitMateS-BS
+inoremap <buffer> <Plug>delimitMateJumpMany =len(b:_l_delimitMate_buffer) ? delimitMate#Finish(0) : delimitMate#JumpMany()
+imap <buffer> <C-ScrollWheelRight> <Plug>delimitMateC-ScrollWheelRight
+imap <buffer> <S-ScrollWheelRight> <Plug>delimitMateS-ScrollWheelRight
+imap <buffer> <ScrollWheelRight> <Plug>delimitMateScrollWheelRight
+imap <buffer> <C-ScrollWheelLeft> <Plug>delimitMateC-ScrollWheelLeft
+imap <buffer> <S-ScrollWheelLeft> <Plug>delimitMateS-ScrollWheelLeft
+imap <buffer> <ScrollWheelLeft> <Plug>delimitMateScrollWheelLeft
+imap <buffer> <C-ScrollWheelDown> <Plug>delimitMateC-ScrollWheelDown
+imap <buffer> <S-ScrollWheelDown> <Plug>delimitMateS-ScrollWheelDown
+imap <buffer> <ScrollWheelDown> <Plug>delimitMateScrollWheelDown
+imap <buffer> <C-ScrollWheelUp> <Plug>delimitMateC-ScrollWheelUp
+imap <buffer> <S-ScrollWheelUp> <Plug>delimitMateS-ScrollWheelUp
+imap <buffer> <ScrollWheelUp> <Plug>delimitMateScrollWheelUp
+nnoremap <buffer> <silent> K :call ShowPyDoc(expand("<cword>"), 1)
 nnoremap <buffer> <F7> :w:!aspell -c %
 nnoremap <buffer> <F5> :w:!/usr/bin/env python3 % 
+imap <buffer> <silent> g <Plug>delimitMateJumpMany
 let &cpo=s:cpo_save
 unlet s:cpo_save
-setlocal keymap=
-setlocal noarabic
 setlocal autoindent
-setlocal balloonexpr=
 setlocal nobinary
 setlocal bufhidden=
 setlocal buflisted
@@ -23,9 +50,7 @@ setlocal colorcolumn=
 setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
 setlocal commentstring=/*%s*/
 setlocal complete=.,w,b,u,t,i
-setlocal concealcursor=
-setlocal conceallevel=0
-setlocal completefunc=
+setlocal completefunc=neocomplcache#complete#auto_complete
 setlocal nocopyindent
 setlocal cryptmethod=
 setlocal nocursorbind
@@ -62,13 +87,13 @@ setlocal indentexpr=
 setlocal indentkeys=0{,0},:,0#,!^F,o,O,e
 setlocal noinfercase
 setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=git\ --git-dir='/home/tyw/.vim/.git'\ show
+setlocal keywordprg=git\ --git-dir='/Users/tyw/.vim/.git'\ show
 setlocal nolinebreak
 setlocal nolisp
 setlocal nolist
 setlocal makeprg=
 setlocal matchpairs=(:),{:},[:]
-setlocal nomodeline
+setlocal modeline
 setlocal modifiable
 setlocal nrformats=octal,hex
 setlocal number
@@ -80,8 +105,6 @@ setlocal nopreviewwindow
 setlocal quoteescape=\\
 setlocal noreadonly
 setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
 setlocal noscrollbind
 setlocal shiftwidth=4
 setlocal noshortname
@@ -107,12 +130,12 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 10 - ((9 * winheight(0) + 10) / 20)
+let s:l = 1 - ((0 * winheight(0) + 11) / 22)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-10
-normal! 0
+1
+normal! 05l
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 " vim: set ft=vim :
