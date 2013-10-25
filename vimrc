@@ -83,8 +83,6 @@ set t_Co=256
 
 if has("gui_running")
 "    set gfn=Monospace\ 10
-    set guifont=Inconsolata\ 11
-    set gfw=WenQuanYi\ Micro\ Hei:h11
     set go=aAce              " 去掉难看的工具栏和滑动条
     set showtabline=2
     colorscheme twilight
@@ -100,6 +98,8 @@ elseif has("win16") || has("win32")
     colorscheme twilight
 elseif has("linux")
     colorscheme twilight
+    set guifont=Inconsolata\ 11
+    set gfw=WenQuanYi\ Micro\ Hei:h11
     "set gfn=Monospace\ 10
     set shell=/bin/zsh
 endif
