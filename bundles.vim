@@ -64,7 +64,7 @@ Bundle 'scrooloose/syntastic'
 " web backend
 Bundle '2072/PHP-Indenting-for-VIm'
 "Bundle 'tpope/vim-rails'
-Bundle 'beyondwords/vim-jinja2'
+"Bundle 'beyondwords/vim-jinja2'
 "Bundle 'digitaltoad/vim-jade'
 Bundle 'vim-scripts/Conque-Shell'
 " web front end
