@@ -95,6 +95,7 @@ Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'tpope/vim-vividchalk'
 "Bundle 'Lokaltog/vim-distinguished'
 "Bundle 'chriskempson/vim-tomorrow-theme'
-Bundle 'matthewtodd/vim-twilight'
+"Bundle 'matthewtodd/vim-twilight'
+Bundle 'vim-scripts/twilight'
 Bundle 'vim-scripts/twilight256.vim'
 filetype plugin indent on     " required!
