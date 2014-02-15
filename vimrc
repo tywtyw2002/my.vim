@@ -78,6 +78,7 @@ au BufWinEnter * silent! loadview
 
 "colorscheme autumn
 colorscheme twilight256 
+"colorscheme twilight
 set t_Co=256
 
 
@@ -91,7 +92,7 @@ endif
 
 " Set font according to system
 if has("mac") || has("macunix")
-    set gfn=Menlo:h12
+    set gfn=monaco:h12
     set shell=/bin/zsh
 elseif has("win16") || has("win32")
     set gfn=Bitstream\ Vera\ Sans\ Mono:h10
@@ -250,3 +251,6 @@ let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 "let g:UltiSnipsJumpForwardTrigger="<c-j>"
 "let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
+
+"fix macvim bug
+au BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,*.md setf markdown

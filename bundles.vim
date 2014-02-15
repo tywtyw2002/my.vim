@@ -40,6 +40,8 @@ Bundle 'kana/vim-smartinput'
 Bundle 'godlygeek/tabular'
 Bundle 'nathanaelkane/vim-indent-guides'
 
+
+
 "--------------
 " IDE features
 "--------------
@@ -51,7 +53,7 @@ Bundle 'kien/ctrlp.vim'
 "Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'scrooloose/syntastic'
-
+Bundle 'fholgado/minibufexpl.vim'
 "-------------
 " Other Utils
 " ------------
@@ -64,7 +66,7 @@ Bundle 'scrooloose/syntastic'
 " web backend
 Bundle '2072/PHP-Indenting-for-VIm'
 "Bundle 'tpope/vim-rails'
-"Bundle 'beyondwords/vim-jinja2'
+Bundle 'beyondwords/vim-jinja2'
 "Bundle 'digitaltoad/vim-jade'
 Bundle 'vim-scripts/Conque-Shell'
 " web front end
@@ -94,7 +96,7 @@ Bundle 'kien/rainbow_parentheses.vim'
 "Bundle 'rickharris/vim-monokai'
 "Bundle 'tpope/vim-vividchalk'
 "Bundle 'Lokaltog/vim-distinguished'
-"Bundle 'chriskempson/vim-tomorrow-theme'
+Bundle 'chriskempson/vim-tomorrow-theme'
 "Bundle 'matthewtodd/vim-twilight'
 Bundle 'tomasr/molokai'
 Bundle 'vim-scripts/twilight'
