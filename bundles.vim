@@ -1,5 +1,7 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
+filetype plugin indent on
+
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -17,16 +19,19 @@ Bundle 'Shougo/neosnippet'
 Bundle 'ervandew/supertab'
 Bundle 'scrooloose/snipmate-snippets'
 "Bundle 'SirVer/ultisnips'
-Bundle 'mattn/zencoding-vim'
+"Bundle 'mattn/zencoding-vim'
 Bundle 'Raimondi/delimitMate'
+
+"=========================
 " snipmate dependencies
+"=========================
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 
 "-----------------
 " Fast navigation
 "-----------------
-Bundle 'tsaleh/vim-matchit'
+"Bundle 'tsaleh/vim-matchit'
 Bundle 'Lokaltog/vim-easymotion'
 
 "--------------
@@ -66,10 +71,14 @@ Bundle 'fholgado/minibufexpl.vim'
 " web backend
 Bundle '2072/PHP-Indenting-for-VIm'
 "Bundle 'tpope/vim-rails'
-Bundle 'beyondwords/vim-jinja2'
+"Bundle 'beyondwords/vim-jinja2'
+Bundle 'Glench/Vim-Jinja2-Syntax'
 "Bundle 'digitaltoad/vim-jade'
 Bundle 'vim-scripts/Conque-Shell'
+
+"------------------------
 " web front end
+"--------------
 Bundle 'othree/html5.vim'
 Bundle 'tpope/vim-haml'
 Bundle 'nono/jquery.vim'
@@ -78,21 +87,27 @@ Bundle 'kchmck/vim-coffee-script'
 "Bundle 'groenewege/vim-less'
 "Bundle 'wavded/vim-stylus'
 
+"--------------
 " markup language
+"--------------
 Bundle 'tpope/vim-markdown'
 
+"--------------
 " Ruby
+"--------------
 "Bundle 'tpope/vim-endwise'
 
+"--------------
 " Scheme
-Bundle 'kien/rainbow_parentheses.vim'
+"--------------
+"Bundle 'kien/rainbow_parentheses.vim'
 "Bundle 'wlangstroth/vim-racket'
 
 "--------------
 " Color Scheme
 "--------------
 "Bundle 'rickharris/vim-blackboard'
-"Bundle 'altercation/vim-colors-solarized'
+Bundle 'altercation/vim-colors-solarized'
 "Bundle 'rickharris/vim-monokai'
 "Bundle 'tpope/vim-vividchalk'
 "Bundle 'Lokaltog/vim-distinguished'
@@ -101,6 +116,6 @@ Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'tomasr/molokai'
 Bundle 'vim-scripts/twilight'
 Bundle 'vim-scripts/twilight256.vim'
-Bundle 'dsolstad/vim-wombat256i'
-Bundle 'vim-scripts/Wombat'
+"Bundle 'dsolstad/vim-wombat256i'
+"Bundle 'vim-scripts/Wombat'
 filetype plugin indent on     " required!
