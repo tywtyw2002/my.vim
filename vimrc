@@ -89,10 +89,11 @@ if has("gui_running")
     colorscheme twilight
 endif
 
-
+"let g:Powerline_symbols = 'fancy'
 " Set font according to system
 if has("mac") || has("macunix")
-    set gfn=monaco:h12
+    set gfn=monaco\ for\ powerline:h12
+    let g:Powerline_symbols = 'fancy'
     set shell=/bin/zsh
 elseif has("win16") || has("win32")
     set gfn=Bitstream\ Vera\ Sans\ Mono:h10
@@ -139,7 +140,9 @@ map <C-x> za
 imap <C-f> <Right>
 imap <C-e> <C-o>$
 " Tagbar
-let g:tagbar_left=1
+nmap <C-r> :TagbarToggle<cr>
+let g:tagbar_left=0
+let g:tagbar_right=1
 let g:tagbar_width=30
 let g:tagbar_autofocus = 1
 let g:tagbar_sort = 0 
