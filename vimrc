@@ -1,5 +1,5 @@
 "include bundles
-source ~/.vim/bundles.vim
+source ~/.vim/pluginlist.vim
 
 syntax on
 set history=700
@@ -77,7 +77,8 @@ au BufWinLeave * silent! mkview
 au BufWinEnter * silent! loadview
 
 "colorscheme autumn
-colorscheme twilight256 
+"colorscheme twilight256 
+colorscheme hybrid
 "colorscheme twilight
 set t_Co=256
 
@@ -86,7 +87,8 @@ if has("gui_running")
 "    set gfn=Monospace\ 10
     set go=aAce              " 去掉难看的工具栏和滑动条
     set showtabline=2
-    colorscheme twilight
+"    colorscheme twilight
+    colorscheme hybrid
 endif
 
 "let g:Powerline_symbols = 'fancy'

@@ -33,7 +33,7 @@ Bundle 'tomtom/tlib_vim'
 "-----------------
 "Bundle 'tsaleh/vim-matchit'
 Bundle 'Lokaltog/vim-easymotion'
-
+Bundle 'airblade/vim-gitgutter'
 "--------------
 " Fast editing
 "--------------
@@ -50,15 +50,16 @@ Bundle 'nathanaelkane/vim-indent-guides'
 "--------------
 " IDE features
 "--------------
+Bundle 'bling/vim-airline'
 Bundle 'scrooloose/nerdtree'
 Bundle 'majutsushi/tagbar'
 Bundle 'humiaozuzu/TabBar'
 "Bundle 'mileszs/ack.vim'
 Bundle 'kien/ctrlp.vim'
-"Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'scrooloose/syntastic'
-Bundle 'fholgado/minibufexpl.vim'
+"Bundle 'fholgado/minibufexpl.vim'
 "-------------
 " Other Utils
 " ------------
@@ -116,6 +117,7 @@ Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'tomasr/molokai'
 Bundle 'vim-scripts/twilight'
 Bundle 'vim-scripts/twilight256.vim'
+Bundle 'w0ng/vim-hybrid'
 "Bundle 'dsolstad/vim-wombat256i'
 "Bundle 'vim-scripts/Wombat'
 filetype plugin indent on     " required!
