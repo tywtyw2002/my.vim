@@ -136,19 +136,26 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 au BufRead,BufNewFile *.coffee set filetype=coffee
 
-map <C-t> :NERDTree<cr>
+
+let mapleader=','
+let maplocalleader='\'
+
 map <C-z> :Pydoc 
 map <C-x> za
 imap <C-f> <Right>
 imap <C-e> <C-o>$
 " Tagbar
-nmap <C-r> :TagbarToggle<cr>
+set tags=./tags,.tags,tags;
+"nmap <C-f> :TagbarToggle<cr>
+nnoremap <Leader>t :TagbarToggle<CR>
 let g:tagbar_left=0
 let g:tagbar_right=1
 let g:tagbar_width=30
 let g:tagbar_autofocus = 1
 let g:tagbar_sort = 0 
 let g:tagbar_compact = 1
+
+
 " tag for coffee
 if executable('coffeetags')
   let g:tagbar_type_coffee = {
@@ -175,6 +182,9 @@ if executable('coffeetags')
 endif
 
 " Nerd Tree 
+"map <C-t> :NERDTree<cr>
+nnoremap <Leader>d :NERDTreeTabsToggle<CR>
+nnoremap <Leader>f :NERDTreeFind<CR>
 let NERDChristmasTree=0
 let NERDTreeWinSize=30
 let NERDTreeChDirMode=2
@@ -221,7 +231,6 @@ let g:rbpt_colorpairs = [
 let g:rbpt_max = 16
 autocmd Syntax lisp,scheme,clojure,racket RainbowParenthesesToggle
 "nerd commit
-let mapleader=","
 map <c-h> ,c<space>
 
 " NeoComplCache

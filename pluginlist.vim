@@ -34,6 +34,9 @@ Bundle 'tomtom/tlib_vim'
 "Bundle 'tsaleh/vim-matchit'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'jistr/vim-nerdtree-tabs'
+Bundle 'scrooloose/nerdtree'
+
 "--------------
 " Fast editing
 "--------------
@@ -50,8 +53,7 @@ Bundle 'nathanaelkane/vim-indent-guides'
 "--------------
 " IDE features
 "--------------
-Bundle 'bling/vim-airline'
-Bundle 'scrooloose/nerdtree'
+"Bundle 'bling/vim-airline'
 Bundle 'majutsushi/tagbar'
 Bundle 'humiaozuzu/TabBar'
 "Bundle 'mileszs/ack.vim'
