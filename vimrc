@@ -16,7 +16,8 @@ set fileencodings=utf-8,gb18030,utf-16,big5
 set backspace=2
 set foldmethod=syntax
 set foldlevel=99
-set hlsearch
+"set hlsearch
+set incsearch
 set showmatch
 set foldmethod=indent
 set laststatus=2
@@ -46,8 +47,14 @@ let g:html_indent_style1 = "inc"
 " ZenCoding
 let g:user_zen_expandabbr_key='<C-j>' 
 
-
-
+" ident guide
+if has("gui_running")
+let g:indent_guides_auto_colors = 1
+else
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgray 
+endif
 
 """"""""""""""""""""
 " customize config "
@@ -115,8 +122,11 @@ filetype indent on
 filetype plugin indent on
 
 
+" w!! to sudo & write a file
+cmap w!! %!sudo tee >/dev/null %
+
 nnoremap <buffer> <F5> :w<CR>:!/usr/bin/env python % <CR>
-nnoremap <buffer> <F7> :w<CR>:!aspell -c %<CR>
+"nnoremap <buffer> <F7> :w<CR>:!aspell -c %<CR>
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 nnoremap <F3> :set noautoindent!<CR>:set nosmartindent!<CR>
 autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
@@ -141,13 +151,15 @@ let mapleader=','
 let maplocalleader='\'
 
 map <C-z> :Pydoc 
-map <C-x> za
+"map <C-x> za
 imap <C-f> <Right>
 imap <C-e> <C-o>$
+
+
 " Tagbar
 set tags=./tags,.tags,tags;
 "nmap <C-f> :TagbarToggle<cr>
-nnoremap <Leader>t :TagbarToggle<CR>
+nnoremap ;t :TagbarToggle<CR>
 let g:tagbar_left=0
 let g:tagbar_right=1
 let g:tagbar_width=30
@@ -183,8 +195,8 @@ endif
 
 " Nerd Tree 
 "map <C-t> :NERDTree<cr>
-nnoremap <Leader>d :NERDTreeTabsToggle<CR>
-nnoremap <Leader>f :NERDTreeFind<CR>
+nnoremap ;d :NERDTreeTabsToggle<CR>
+nnoremap ;f :NERDTreeFind<CR>
 let NERDChristmasTree=0
 let NERDTreeWinSize=30
 let NERDTreeChDirMode=2
@@ -193,11 +205,18 @@ let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\~$']
 let NERDTreeShowBookmarks=1
 let NERDTreeWinPos = "right"
 
+"nerdtree-tabs
+let g:nerdtree_tabs_open_on_gui_startup = 0
+
+
+
 " ctrlp
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,.DS_Store  " MacOSX/Linux
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 
 " tabbar
+"humiaozuzu/TabBar
+" only in console mode
 let g:Tb_MaxSize = 2
 let g:Tb_TabWrap = 1
 hi Tb_Normal guifg=white ctermfg=white
@@ -207,7 +226,18 @@ hi Tb_VisibleChanged guifg=green ctermbg=252 ctermfg=white
 
 " easy-motion
 let g:EasyMotion_leader_key = '<Leader>'
-
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+map <Leader>l <Plug>(easymotion-lineforward)
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+map <Leader>h <Plug>(easymotion-linebackward)
+let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion"
+"let g:EasyMotion_move_highlight = 1
+hi link EasyMotionTarget ErrorMsg
+hi link EasyMotionShade  Comment
+hi link EasyMotionTarget2First MatchParen
+hi link EasyMotionTarget2Second MatchParen
 
 " Rainbow parentheses for Lisp and variants
 let g:rbpt_colorpairs = [
@@ -230,6 +260,8 @@ let g:rbpt_colorpairs = [
     \ ]
 let g:rbpt_max = 16
 autocmd Syntax lisp,scheme,clojure,racket RainbowParenthesesToggle
+
+
 "nerd commit
 map <c-h> ,c<space>
 

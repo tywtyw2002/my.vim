@@ -42,7 +42,7 @@ Bundle 'scrooloose/nerdtree'
 "--------------
 Bundle 'tpope/vim-surround'
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'sjl/gundo.vim'
+"Bundle 'sjl/gundo.vim'
 "Bundle 'Raimondi/delimitMate'
 Bundle 'kana/vim-smartinput'
 Bundle 'godlygeek/tabular'
