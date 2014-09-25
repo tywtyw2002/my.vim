@@ -31,7 +31,7 @@ Bundle 'tomtom/tlib_vim'
 "-----------------
 " Fast navigation
 "-----------------
-"Bundle 'tsaleh/vim-matchit'
+"Bundle 'tsaleh/vim-matchit' "bug cannot git clone
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'jistr/vim-nerdtree-tabs'
@@ -61,6 +61,8 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'scrooloose/syntastic'
+Bundle 'Shougo/unite.vim'
+Bundle 'Shougo/unite-outline'
 "Bundle 'fholgado/minibufexpl.vim'
 "-------------
 " Other Utils

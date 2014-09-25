@@ -159,7 +159,7 @@ imap <C-e> <C-o>$
 " Tagbar
 set tags=./tags,.tags,tags;
 "nmap <C-f> :TagbarToggle<cr>
-nnoremap ;t :TagbarToggle<CR>
+nnoremap <silent> ;t :TagbarToggle<CR>
 let g:tagbar_left=0
 let g:tagbar_right=1
 let g:tagbar_width=30
@@ -195,8 +195,8 @@ endif
 
 " Nerd Tree 
 "map <C-t> :NERDTree<cr>
-nnoremap ;d :NERDTreeTabsToggle<CR>
-nnoremap ;f :NERDTreeFind<CR>
+nnoremap <silent> ;d :NERDTreeTabsToggle<CR>
+nnoremap <silent> ;f :NERDTreeFind<CR>
 let NERDChristmasTree=0
 let NERDTreeWinSize=30
 let NERDTreeChDirMode=2
@@ -211,8 +211,28 @@ let g:nerdtree_tabs_open_on_gui_startup = 0
 
 
 " ctrlp
+nnoremap <silent> ;p :CtrlP<CR>
+nnoremap <silent> ;b :CtrlPBuffer<CR>
+nnoremap <silent> ;u :CtrlPUndo<CR>
+nnoremap <silent> ;g :CtrlPTag<CR>
+nnoremap <silent> ;c :CtrlPBufTag<CR>
+nnoremap <silent> ;m :CtrlPMRU<CR>
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,.DS_Store  " MacOSX/Linux
-let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+"let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+let g:ctrlp_extensions = ['tag', 'buffertag', 'undo']
+if executable('ag')
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command =
+    \ 'ag %s --files-with-matches -g "" --ignore "\.git$\|\.hg$\|\.svn$"'
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+else
+  " Fall back to using git ls-files if Ag is not available
+  let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
+endif
+
+
 
 " tabbar
 "humiaozuzu/TabBar
@@ -296,6 +316,40 @@ let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 "let g:UltiSnipsExpandTrigger="<c-j>"
 "let g:UltiSnipsJumpForwardTrigger="<c-j>"
 "let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
+"" Matchit
+"" Use Tab instead of % to switch
+"nmap <Tab> %
+"vmap <Tab> %
+
+"" unite
+"let g:unite_data_directory=$HOME . '/.vim/cache/unite'
+"let g:unite_source_history_yank_enable=1
+"let g:unite_source_rec_max_cache_files=100
+"let g:unite_prompt='➤ '
+"if executable('ag')
+    "let g:unite_source_grep_command='ag'
+    "let g:unite_source_grep_default_opts='--line-numbers --nocolor --nogroup --hidden'
+    "let g:unite_source_grep_recursive_opt=''
+"endif
+"function! s:unite_settings() " Use ESC to exit, and use C-J and C-K to move
+    "nmap <buffer> <ESC> <plug>(unite_exit)
+    "imap <buffer> <ESC> <plug>(unite_exit)
+    "imap <buffer> <C-J> <Plug>(unite_select_next_line)
+    "imap <buffer> <C-K> <Plug>(unite_select_previous_line)
+"endfunction
+"autocmd filetype unite call s:unite_settings()
+
+"nnoremap <Space> :Unite -keep-focus -no-quit<CR>
+""https://github.com/farseer90718/dotvim/blob/master/config/plugins/unite.rc.vim
+"nnoremap <silent> <Space>f :<C-U>Unite -start-insert -auto-resize -buffer-name=files file_rec/async<CR><C-U>
+"nnoremap <silent> <Space>y :<C-U>Unite -start-insert -buffer-name=yanks history/yank<CR>
+"nnoremap <silent> <Space>l :<C-U>Unite -start-insert -auto-resize -buffer-name=line line<CR>
+"nnoremap <silent> <Space>o :<C-U>Unite -auto-resize -buffer-name=outline outline<CR>
+"nnoremap <silent> <Space>b :<C-U>Unite -quick-match buffer<CR>
+"nnoremap <silent> <Space>t :<C-U>Unite -quick-match tab<CR>
+"nnoremap <silent> <Space>/ :<C-U>Unite -auto-resize -buffer-name=search grep:.<CR>
+
 
 
 "fix macvim bug
