@@ -125,6 +125,7 @@ filetype plugin indent on
 " w!! to sudo & write a file
 cmap w!! %!sudo tee >/dev/null %
 
+nnoremap <silent> ;i :set paste!<CR>
 nnoremap <buffer> <F5> :w<CR>:!/usr/bin/env python % <CR>
 "nnoremap <buffer> <F7> :w<CR>:!aspell -c %<CR>
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>

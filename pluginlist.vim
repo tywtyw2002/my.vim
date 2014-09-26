@@ -80,7 +80,7 @@ Bundle '2072/PHP-Indenting-for-VIm'
 Bundle 'Glench/Vim-Jinja2-Syntax'
 "Bundle 'digitaltoad/vim-jade'
 Bundle 'vim-scripts/Conque-Shell'
-
+Bundle 'rodjek/vim-puppet'
 "------------------------
 " web front end
 "--------------
