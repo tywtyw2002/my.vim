@@ -209,7 +209,10 @@ let NERDTreeWinPos = "right"
 "nerdtree-tabs
 let g:nerdtree_tabs_open_on_gui_startup = 0
 
-
+"ag.vim
+let g:ackprg = 'ag --nogroup --nocolor --column'
+nnoremap ;ag :Ag  
+nnoremap ;af :AgFile ""<Left>
 
 " ctrlp
 nnoremap <silent> ;p :CtrlP<CR>
@@ -218,6 +221,7 @@ nnoremap <silent> ;u :CtrlPUndo<CR>
 nnoremap <silent> ;g :CtrlPTag<CR>
 nnoremap <silent> ;c :CtrlPBufTag<CR>
 nnoremap <silent> ;m :CtrlPMRU<CR>
+nnoremap ;s :CtrlP 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,.DS_Store  " MacOSX/Linux
 "let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 let g:ctrlp_extensions = ['tag', 'buffertag', 'undo']

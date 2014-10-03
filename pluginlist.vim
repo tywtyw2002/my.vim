@@ -21,7 +21,7 @@ Bundle 'scrooloose/snipmate-snippets'
 "Bundle 'SirVer/ultisnips'
 "Bundle 'mattn/zencoding-vim'
 Bundle 'Raimondi/delimitMate'
-
+Bundle 'junegunn/vim-easy-align'
 "=========================
 " snipmate dependencies
 "=========================
@@ -31,11 +31,12 @@ Bundle 'tomtom/tlib_vim'
 "-----------------
 " Fast navigation
 "-----------------
-"Bundle 'tsaleh/vim-matchit' "bug cannot git clone
+Bundle 'vim-scripts/matchit.zip' 
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'scrooloose/nerdtree'
+Bundle 'kshenoy/vim-signature'
 
 "--------------
 " Fast editing
@@ -57,12 +58,14 @@ Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'majutsushi/tagbar'
 Bundle 'humiaozuzu/TabBar'
 "Bundle 'mileszs/ack.vim'
+Bundle 'rking/ag.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'scrooloose/syntastic'
-Bundle 'Shougo/unite.vim'
-Bundle 'Shougo/unite-outline'
+Bundle 'tpope/vim-repeat'
+"Bundle 'Shougo/unite.vim'
+"Bundle 'Shougo/unite-outline'
 "Bundle 'fholgado/minibufexpl.vim'
 "-------------
 " Other Utils
