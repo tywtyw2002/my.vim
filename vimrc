@@ -221,8 +221,8 @@ nnoremap <silent> ;p :CtrlP<CR>
 nnoremap <silent> ;P :CtrlPUndoClearCache<CR>
 nnoremap <silent> ;b :CtrlPBuffer<CR>
 nnoremap <silent> ;u :CtrlPUndo<CR>
-nnoremap <silent> ;g :CtrlPTag<CR>
-nnoremap <silent> ;c :CtrlPBufTag<CR>
+nnoremap <silent> ;ct :CtrlPTag<CR>
+nnoremap <silent> ;cb :CtrlPBufTag<CR>
 nnoremap <silent> ;m :CtrlPMRU<CR>
 nnoremap ;s :CtrlP 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,.DS_Store  " MacOSX/Linux
@@ -239,6 +239,20 @@ else
   let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
   let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others']
 endif
+
+
+" git
+nnoremap <silent> ;gs :Gstatus<CR>
+nnoremap <silent> ;gd :Gdiff<CR>
+nnoremap <silent> ;gc :Gcommit<CR>
+"nnoremap <silent> ;gb :Gblame<CR>
+nnoremap <silent> ;gl :Glog<CR>
+nnoremap <silent> ;gp :Git push<CR>
+nnoremap <silent> ;gr :Gread<CR>
+nnoremap <silent> ;gw :Gwrite<CR>
+nnoremap <silent> ;ge :Gedit<CR>
+" Mnemonic _i_nteractive
+nnoremap <silent> <leader>gi :Git add -p %<CR>
 
 
 
