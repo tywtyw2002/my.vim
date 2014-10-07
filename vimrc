@@ -156,6 +156,8 @@ map <C-z> :Pydoc
 imap <C-f> <Right>
 imap <C-e> <C-o>$
 
+"ctag
+nnoremap <silent> ;ct :!ctags -R -f .tags<CR>
 
 " Tagbar
 set tags=./tags,.tags,tags;
@@ -211,11 +213,12 @@ let g:nerdtree_tabs_open_on_gui_startup = 0
 
 "ag.vim
 let g:ackprg = 'ag --nogroup --nocolor --column'
-nnoremap ;ag :Ag  
+nnoremap ;ag :Ag 
 nnoremap ;af :AgFile ""<Left>
 
 " ctrlp
 nnoremap <silent> ;p :CtrlP<CR>
+nnoremap <silent> ;P :CtrlPUndoClearCache<CR>
 nnoremap <silent> ;b :CtrlPBuffer<CR>
 nnoremap <silent> ;u :CtrlPUndo<CR>
 nnoremap <silent> ;g :CtrlPTag<CR>
