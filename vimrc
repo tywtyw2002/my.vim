@@ -107,10 +107,10 @@ if has("mac") || has("macunix")
 elseif has("win16") || has("win32")
     set gfn=Bitstream\ Vera\ Sans\ Mono:h10
     colorscheme twilight
-elseif has("linux")
-    set gfn=Monaco\ for\ Powerline:h12
+else
+    set gfn=Monaco\ for\ Powerline\ 10
     let g:Powerline_symbols = 'fancy'
-    set gfw=WenQuanYi\ Micro\ Hei:h11
+    set gfw=WenQuanYi\ Micro\ Hei\ 10
     set shell=/bin/zsh
 endif
 
