@@ -108,7 +108,7 @@ elseif has("win16") || has("win32")
     set gfn=Bitstream\ Vera\ Sans\ Mono:h10
     colorscheme twilight
 elseif has("linux")
-    set gfn=Monaco\ for\ powerline:h12
+    set gfn=Monaco\ for\ Powerline:h12
     let g:Powerline_symbols = 'fancy'
     set gfw=WenQuanYi\ Micro\ Hei:h11
     set shell=/bin/zsh
