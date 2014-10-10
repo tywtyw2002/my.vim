@@ -108,10 +108,14 @@ elseif has("win16") || has("win32")
     set gfn=Bitstream\ Vera\ Sans\ Mono:h10
     colorscheme twilight
 else
-    set gfn=Monaco\ for\ Powerline\ 10
-    let g:Powerline_symbols = 'fancy'
-    set gfw=WenQuanYi\ Micro\ Hei\ 10
-    set shell=/bin/zsh
+    let h = join(split(tolower(system('hostname -f')),'\.')[1:], '.')
+    let h = substitute(h, "\n$", "", "")
+    if h == "cs.ualberta.ca"
+        set gfn=Monaco\ for\ Powerline\ 10
+        let g:Powerline_symbols = 'fancy'
+        set gfw=WenQuanYi\ Micro\ Hei\ 10
+        set shell=/bin/zsh
+    endif
 endif
 
 
