@@ -160,7 +160,7 @@ imap <C-f> <Right>
 imap <C-e> <C-o>$
 
 "ctag
-nnoremap <silent> ;cg :!ctags -R -f .tags<CR>
+nnoremap <silent> ;cf :!ctags -R -f .tags<CR>
 
 " Tagbar
 set tags=./tags,.tags,tags;
@@ -224,7 +224,7 @@ nnoremap <silent> ;p :CtrlP<CR>
 nnoremap <silent> ;P :CtrlPUndoClearCache<CR>
 nnoremap <silent> ;b :CtrlPBuffer<CR>
 nnoremap <silent> ;u :CtrlPUndo<CR>
-nnoremap <silent> ;ct :CtrlPTag<CR>
+nnoremap <silent> ;cg :CtrlPTag<CR>
 nnoremap <silent> ;cb :CtrlPBufTag<CR>
 nnoremap <silent> ;m :CtrlPMRU<CR>
 nnoremap ;s :CtrlP 
