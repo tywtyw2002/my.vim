@@ -110,10 +110,13 @@ elseif has("win16") || has("win32")
 else
     let h = join(split(tolower(system('hostname -f')),'\.')[1:], '.')
     let h = substitute(h, "\n$", "", "")
-    if h == "cs.ualberta.ca"
+    if h == "cs.ualberta.ca" " CS lab machine
         set gfn=Monaco\ for\ Powerline\ 10
         let g:Powerline_symbols = 'fancy'
         set gfw=WenQuanYi\ Micro\ Hei\ 10
+        set shell=/bin/zsh
+    elseif h == "c70.us"   "My Servers and vps
+        let g:Powerline_symbols = 'fancy'
         set shell=/bin/zsh
     endif
 endif
