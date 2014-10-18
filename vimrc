@@ -22,7 +22,7 @@ set showmatch
 set foldmethod=indent
 set laststatus=2
 set nocompatible
-
+set nocp
 
 
 
