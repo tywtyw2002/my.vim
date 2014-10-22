@@ -17,6 +17,7 @@ Bundle 'Shougo/neocomplcache'
 Bundle 'honza/vim-snippets'
 Bundle 'Shougo/neosnippet'
 Bundle 'Shougo/neosnippet-snippets'
+"Bundle 'supermomonga/neocomplete-rsense.vim'
 Bundle 'ervandew/supertab'
 Bundle 'scrooloose/snipmate-snippets'
 "Bundle 'SirVer/ultisnips'
@@ -105,7 +106,7 @@ Bundle 'tpope/vim-markdown'
 " Ruby
 "--------------
 "Bundle 'tpope/vim-endwise'
-
+Bundle 'vim-ruby/vim-ruby'
 "--------------
 " Scheme
 "--------------
