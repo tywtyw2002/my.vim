@@ -381,6 +381,11 @@ let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 "nnoremap <silent> <Space>/ :<C-U>Unite -auto-resize -buffer-name=search grep:.<CR>
 
 
+" syntastic  #syntax check
+if executable('flake8')
+    let g:syntastic_python_checkers = ['flake8']
+endif
+
 
 "fix macvim bug
 au BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,*.md setf markdown
