@@ -35,7 +35,6 @@ autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=
 autocmd FileType html,htmldjango,xhtml,haml setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=0
 autocmd FileType sass,scss,css setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=79
 
-
 " syntax support
 autocmd Syntax javascript set syntax=jquery   " JQuery syntax support
 " js
@@ -108,6 +107,11 @@ if has("mac") || has("macunix")
 elseif has("win16") || has("win32")
     set gfn=Bitstream\ Vera\ Sans\ Mono:h10
     colorscheme twilight
+elseif substitute(system('hostname -f'),"\n$", "", "") == "CosHiM-EMC"
+        set gfn=Monaco\ for\ Powerline\ 10
+        let g:Powerline_symbols = 'fancy'
+        set gfw=WenQuanYi\ Micro\ Hei\ 10
+        set shell=/bin/zsh
 else
     let h = join(split(tolower(system('hostname -f')),'\.')[1:], '.')
     let h = substitute(h, "\n$", "", "")
@@ -388,4 +392,5 @@ endif
 
 
 "fix macvim bug
-au BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,*.md setf markdown
+au BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,*.md set filetype=markdown
+au BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,*.md set syntax=markdown
