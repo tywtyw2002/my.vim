@@ -108,6 +108,7 @@ elseif has("win16") || has("win32")
     set gfn=Bitstream\ Vera\ Sans\ Mono:h10
     colorscheme twilight
 elseif substitute(system('hostname -f'),"\n$", "", "") == "CosHiM-EMC"
+        highlight Normal ctermbg=NONE
         set gfn=Monaco\ for\ Powerline\ 10
         let g:Powerline_symbols = 'fancy'
         set gfw=WenQuanYi\ Micro\ Hei\ 10
