@@ -13,12 +13,13 @@ Bundle 'gmarik/vundle'
 "------------------
 " Code Completions
 "------------------
+Bundle 'Valloric/YouCompleteMe'
 Bundle 'Shougo/neocomplcache'
 Bundle 'honza/vim-snippets'
-Bundle 'Shougo/neosnippet'
-Bundle 'Shougo/neosnippet-snippets'
+"Bundle 'Shougo/neosnippet'
+"Bundle 'Shougo/neosnippet-snippets'
 "Bundle 'supermomonga/neocomplete-rsense.vim'
-Bundle 'ervandew/supertab'
+"Bundle 'ervandew/supertab'
 Bundle 'scrooloose/snipmate-snippets'
 "Bundle 'SirVer/ultisnips'
 "Bundle 'mattn/zencoding-vim'
