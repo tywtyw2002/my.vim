@@ -267,6 +267,12 @@ nnoremap <silent> ;ge :Gedit<CR>
 " Mnemonic _i_nteractive
 nnoremap <silent> <leader>gi :Git add -p %<CR>
 
+"####################
+"       ycm
+"####################
+let g:ycm_collect_identifiers_from_tags_files = 1
+
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 
 
 " tabbar
