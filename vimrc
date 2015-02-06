@@ -44,7 +44,7 @@ let g:html_indent_style1 = "inc"
 
 
 " ZenCoding
-let g:user_zen_expandabbr_key='<C-j>' 
+"let g:user_zen_expandabbr_key='<C-j>' 
 
 " ident guide
 if has("gui_running")
@@ -327,36 +327,36 @@ autocmd Syntax lisp,scheme,clojure,racket RainbowParenthesesToggle
 map <c-h> ,c<space>
 
 " NeoComplCache
-set completeopt-=preview
-let g:neocomplcache_enable_at_startup=1
-"let g:neoComplcache_disableautocomplete=1
-let g:neocomplcache_enable_smart_case=1
-let g:neocomplcache_min_syntax_length = 3
-let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
+"set completeopt-=preview
+"let g:neocomplcache_enable_at_startup=1
+""let g:neoComplcache_disableautocomplete=1
+"let g:neocomplcache_enable_smart_case=1
+"let g:neocomplcache_min_syntax_length = 3
+"let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+"imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+"smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+"xmap <C-k>     <Plug>(neosnippet_expand_target)
 
 
 " SuperTab
-let g:SuperTabDefaultCompletionType="<c-n>"
+"let g:SuperTabDefaultCompletionType="<c-n>"
 " SuperTab like snippets behavior.
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: pumvisible() ? "\<C-n>" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: "\<TAB>"
+"imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+"\ "\<Plug>(neosnippet_expand_or_jump)"
+"\: pumvisible() ? "\<C-n>" : "\<TAB>"
+"smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+"\ "\<Plug>(neosnippet_expand_or_jump)"
+"\: "\<TAB>"
 
 " Enable snipMate compatibility feature.
-let g:neosnippet#enable_snipmate_compatibility = 1
+"let g:neosnippet#enable_snipmate_compatibility = 1
 " Tell Neosnippet about the other snippets
-let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+"let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 
 "UltiSnips
-"let g:UltiSnipsExpandTrigger="<c-j>"
-"let g:UltiSnipsJumpForwardTrigger="<c-j>"
-"let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsExpandTrigger = "<c-n>"
+let g:UltiSnipsJumpForwardTrigger = "<c-n>"
+let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
 
 "" Matchit
 "" Use Tab instead of % to switch
@@ -393,10 +393,11 @@ let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 
 
 " syntastic  #syntax check
+let g:syntastic_check_on_open = 1
 if executable('flake8')
     let g:syntastic_python_checkers = ['flake8']
 endif
-
+let g:syntastic_python_checkers = ['pylint']
 
 "fix macvim bug
 au BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,*.md set filetype=markdown
