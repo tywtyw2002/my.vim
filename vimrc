@@ -61,6 +61,7 @@ endif
 " Set 7 lines to the cursor - when moving vertically using j/k
 set so=7
 set wildmenu
+"set wildmode=list:longest
 
 " Ignore compiled files
 set wildignore=*.o,*~,*.pyc
@@ -151,12 +152,12 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
-autocmd FileType python set complete+=k~/.vim/syntax/python.vim "isk+=.,(
+"autocmd FileType python set complete+=k~/.vim/syntax/python.vim "isk+=.,(
 autocmd BufNewFile *.py 0r ~/.vim/template/simple.py
 "autocmd BufNewFile *.s 0r ~/.vim/template/simple.s
 autocmd BufRead *.mako set filetype=mako
-autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+"autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+"autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 au BufRead,BufNewFile *.coffee set filetype=coffee
 
@@ -270,9 +271,24 @@ nnoremap <silent> <leader>gi :Git add -p %<CR>
 "####################
 "       ycm
 "####################
+let g:ycm_collect_identifiers_from_comments_and_strings = 1 
 let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_complete_in_comments = 1 
+let g:ycm_min_num_of_chars_for_completion = 2
+"let g:ycm_seed_identifiers_with_syntax = 1 
+let g:ycm_add_preview_to_completeopt = 1
+let g:ycm_use_ultisnips_completer = 1
 
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+let g:ycm_goto_buffer_command = 'horizontal-split'
+let g:ycm_autoclose_preview_window_after_insertion = 1
+
+nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <leader>gd :YcmCompleter GoToDeclaration<CR>
+
+"vim-trailing-whitespace
+" Fast remove whitespace
+map ;fs :FixWhitespace<cr>
+
 
 
 " tabbar
@@ -354,9 +370,13 @@ map <c-h> ,c<space>
 "let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 
 "UltiSnips
-let g:UltiSnipsExpandTrigger = "<c-n>"
-let g:UltiSnipsJumpForwardTrigger = "<c-n>"
+let g:UltiSnipsExpandTrigger = "<c-j>"
+let g:UltiSnipsJumpForwardTrigger = "<c-j>"
 let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
+"let g:UltiSnipsSnippetDirectories = $HOME.'/.vim/bundle/vim-snippets/UltiSnips'
+
+let g:snip_author = 'Tianyi Wu'
+
 
 "" Matchit
 "" Use Tab instead of % to switch

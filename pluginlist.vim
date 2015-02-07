@@ -1,6 +1,6 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
-filetype plugin indent on
+"filetype plugin indent on
 
 
 set rtp+=~/.vim/bundle/vundle/
@@ -51,6 +51,7 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'kana/vim-smartinput'
 Bundle 'godlygeek/tabular'
 Bundle 'nathanaelkane/vim-indent-guides'
+Bundle "bronson/vim-trailing-whitespace"
 
 
 
