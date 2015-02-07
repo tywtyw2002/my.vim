@@ -1,6 +1,6 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
-filetype plugin indent on
+"filetype plugin indent on
 
 
 set rtp+=~/.vim/bundle/vundle/
