@@ -131,4 +131,3 @@ Bundle 'vim-scripts/twilight256.vim'
 Bundle 'w0ng/vim-hybrid'
 "Bundle 'dsolstad/vim-wombat256i'
 "Bundle 'vim-scripts/Wombat'
-filetype plugin indent on     " required!
