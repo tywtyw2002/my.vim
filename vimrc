@@ -369,6 +369,7 @@ map <c-h> ,c<space>
 "let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 
 "UltiSnips
+let g:ultisnips_python_style = 'sphinx'
 let g:UltiSnipsExpandTrigger = "<c-j>"
 let g:UltiSnipsJumpForwardTrigger = "<c-j>"
 let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
