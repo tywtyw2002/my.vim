@@ -82,6 +82,7 @@ Bundle 'jmcantrell/vim-virtualenv'
 " Syntax/Indent for language enhancement
 "----------------------------------------
 " web backend
+Bundle 'chase/vim-ansible-yaml'
 Bundle '2072/PHP-Indenting-for-VIm'
 "Bundle 'tpope/vim-rails'
 "Bundle 'beyondwords/vim-jinja2'
