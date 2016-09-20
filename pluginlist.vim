@@ -76,6 +76,8 @@ Bundle 'jmcantrell/vim-virtualenv'
 "-------------
 " Other Utils
 " ------------
+Bundle 'jceb/vim-orgmode'
+Bundle 'Rykka/riv.vim'
 "Bundle 'humiaozuzu/fcitx-status'
 "Bundle 'nvie/vim-togglemouse'
 
@@ -122,7 +124,7 @@ Bundle 'vim-ruby/vim-ruby'
 " Color Scheme
 "--------------
 "Bundle 'rickharris/vim-blackboard'
-Bundle 'altercation/vim-colors-solarized'
+"Bundle 'altercation/vim-colors-solarized'
 "Bundle 'rickharris/vim-monokai'
 "Bundle 'tpope/vim-vividchalk'
 "Bundle 'Lokaltog/vim-distinguished'
