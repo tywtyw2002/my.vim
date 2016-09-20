@@ -44,7 +44,7 @@ let g:html_indent_style1 = "inc"
 
 
 " ZenCoding
-"let g:user_zen_expandabbr_key='<C-j>' 
+"let g:user_zen_expandabbr_key='<C-j>'
 
 " ident guide
 if has("gui_running")
@@ -52,7 +52,7 @@ let g:indent_guides_auto_colors = 1
 else
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgray 
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=darkgray
 endif
 
 """"""""""""""""""""
@@ -83,8 +83,9 @@ set hid
 au BufWinLeave * silent! mkview
 au BufWinEnter * silent! loadview
 
+set background=dark
 "colorscheme autumn
-"colorscheme twilight256 
+"colorscheme twilight256
 colorscheme hybrid
 "colorscheme twilight
 set t_Co=256
@@ -140,7 +141,7 @@ cmap w!! %!sudo tee >/dev/null %
 
 nnoremap <silent> ;i :set paste!<CR>
 nnoremap <F5> :w<CR>:!/usr/bin/env python % <CR>
-nnoremap <F6> :w<CR>:!autopep8 -i % <CR> 
+nnoremap <F6> :w<CR>:!autopep8 -i % <CR>
 "nnoremap <buffer> <F7> :w<CR>:!aspell -c %<CR>
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 nnoremap <F3> :set noautoindent!<CR>:set nosmartindent!<CR>
@@ -165,7 +166,7 @@ au BufRead,BufNewFile *.coffee set filetype=coffee
 let mapleader=','
 let maplocalleader='\'
 
-map <C-z> :Pydoc 
+map <C-z> :Pydoc
 "map <C-x> za
 imap <C-f> <Right>
 imap <C-e> <C-o>$
@@ -181,7 +182,7 @@ let g:tagbar_left=0
 let g:tagbar_right=1
 let g:tagbar_width=30
 let g:tagbar_autofocus = 1
-let g:tagbar_sort = 0 
+let g:tagbar_sort = 0
 let g:tagbar_compact = 1
 
 
@@ -210,7 +211,7 @@ if executable('coffeetags')
     \ }
 endif
 
-" Nerd Tree 
+" Nerd Tree
 "map <C-t> :NERDTree<cr>
 nnoremap <silent> ;d :NERDTreeTabsToggle<CR>
 nnoremap <silent> ;f :NERDTreeFind<CR>
@@ -227,7 +228,7 @@ let g:nerdtree_tabs_open_on_gui_startup = 0
 
 "ag.vim
 let g:ackprg = 'ag --nogroup --nocolor --column'
-nnoremap ;ag :Ag 
+nnoremap ;ag :Ag
 nnoremap ;af :AgFile ""<Left>
 
 " ctrlp
@@ -238,7 +239,7 @@ nnoremap <silent> ;u :CtrlPUndo<CR>
 nnoremap <silent> ;cg :CtrlPTag<CR>
 nnoremap <silent> ;cb :CtrlPBufTag<CR>
 nnoremap <silent> ;m :CtrlPMRU<CR>
-nnoremap ;s :CtrlP 
+nnoremap ;s :CtrlP
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc,.DS_Store  " MacOSX/Linux
 "let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
 let g:ctrlp_extensions = ['tag', 'buffertag', 'undo']
@@ -271,11 +272,11 @@ nnoremap <silent> <leader>gi :Git add -p %<CR>
 "####################
 "       ycm
 "####################
-let g:ycm_collect_identifiers_from_comments_and_strings = 1 
+let g:ycm_collect_identifiers_from_comments_and_strings = 1
 let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_complete_in_comments = 1 
+let g:ycm_complete_in_comments = 1
 "let g:ycm_min_num_of_chars_for_completion = 2
-"let g:ycm_seed_identifiers_with_syntax = 1 
+"let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_use_ultisnips_completer = 1
 
