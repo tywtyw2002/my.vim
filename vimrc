@@ -90,6 +90,8 @@ colorscheme hybrid
 "colorscheme twilight
 set t_Co=256
 
+let g:airline_powerline_fonts=1
+let g:airline_theme='powerlineish'
 
 if has("gui_running")
 "    set gfn=Monospace\ 10
@@ -103,7 +105,7 @@ endif
 "let g:Powerline_symbols = 'fancy'
 " Set font according to system
 if has("mac") || has("macunix")
-    set gfn=monaco\ for\ powerline:h12
+    set gfn=Monaco\ Nerd\ Font:h12
     let g:Powerline_symbols = 'fancy'
     set shell=/bin/zsh
 elseif has("win16") || has("win32")
@@ -141,7 +143,8 @@ cmap w!! %!sudo tee >/dev/null %
 
 nnoremap <silent> ;i :set paste!<CR>
 nnoremap <F5> :w<CR>:!/usr/bin/env python % <CR>
-nnoremap <F6> :w<CR>:!autopep8 -i % <CR>
+nnoremap <F6> :w<CR>:exe "1,$!" "autopep8 -a -a %"<CR> :w <CR>
+"nnoremap <F6> :w<CR>:!autopep8 -i % <CR>
 "nnoremap <buffer> <F7> :w<CR>:!aspell -c %<CR>
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 nnoremap <F3> :set noautoindent!<CR>:set nosmartindent!<CR>
@@ -286,6 +289,14 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>gd :YcmCompleter GoToDeclaration<CR>
 
+let g:ycm_key_invoke_completion = '<C-Space>'
+
+"YCM BLACK list
+let g:ycm_filetype_blacklist = {
+        \ 'tagbar' : 1,
+        \ 'gitcommit' : 1,
+        \}
+
 "vim-trailing-whitespace
 " Fast remove whitespace
 map ;fs :FixWhitespace<cr>
@@ -414,11 +425,21 @@ let g:snip_author = 'Tianyi Wu'
 
 
 " syntastic  #syntax check
-let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_python_checkers = ['pylint']
+"if executable('flake8')
+"    let g:syntastic_python_checkers = ['flake8']
+"endif
+
+"call add(g:syntastic_python_checkers, 'pylint')
+
+" ALE
+let g:ale_sign_warning = ">>"
+let b:ale_linters = ['pylint']
 if executable('flake8')
-    let g:syntastic_python_checkers = ['flake8']
+    let b:ale_linters = ['flake8', 'pylint']
 endif
-let g:syntastic_python_checkers = ['pylint']
+
 
 "fix macvim bug
 au BufNewFile,BufRead *.markdown,*.mdown,*.mkd,*.mkdn,*.md set filetype=markdown

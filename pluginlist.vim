@@ -25,6 +25,7 @@ Bundle 'SirVer/ultisnips'
 "Bundle 'mattn/zencoding-vim'
 Bundle 'Raimondi/delimitMate'
 Bundle 'junegunn/vim-easy-align'
+Bundle 'tpope/vim-dispatch'
 "=========================
 " snipmate dependencies
 "=========================
@@ -63,16 +64,20 @@ Bundle 'majutsushi/tagbar'
 Bundle 'humiaozuzu/TabBar'
 "Bundle 'mileszs/ack.vim'
 Bundle 'rking/ag.vim'
-Bundle 'kien/ctrlp.vim'
+Bundle 'ctrlpvim/ctrlp.vim'
 Bundle 'tpope/vim-fugitive'
 "Bundle 'Lokaltog/vim-powerline'
-Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
-Bundle 'scrooloose/syntastic'
+"Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+Bundle 'vim-airline/vim-airline'
+Bundle 'vim-airline/vim-airline-themes'
+"Bundle 'scrooloose/syntastic'
+Bundle 'w0rp/ale'
 Bundle 'tpope/vim-repeat'
 Bundle 'jmcantrell/vim-virtualenv'
 "Bundle 'Shougo/unite.vim'
 "Bundle 'Shougo/unite-outline'
 "Bundle 'fholgado/minibufexpl.vim'
+Bundle 'ryanoasis/vim-devicons'
 "-------------
 " Other Utils
 " ------------
@@ -93,6 +98,8 @@ Bundle 'Glench/Vim-Jinja2-Syntax'
 "Bundle 'digitaltoad/vim-jade'
 Bundle 'vim-scripts/Conque-Shell'
 Bundle 'rodjek/vim-puppet'
+Bundle 'sudar/vim-arduino-syntax'
+Bundle 'saltstack/salt-vim'
 "------------------------
 " web front end
 "--------------
