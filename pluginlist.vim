@@ -78,6 +78,8 @@ Bundle 'jmcantrell/vim-virtualenv'
 "Bundle 'Shougo/unite-outline'
 "Bundle 'fholgado/minibufexpl.vim'
 Bundle 'ryanoasis/vim-devicons'
+Bundle 'rhysd/vim-clang-format'
+
 "-------------
 " Other Utils
 " ------------
@@ -90,6 +92,7 @@ Bundle 'Rykka/riv.vim'
 " Syntax/Indent for language enhancement
 "----------------------------------------
 " web backend
+Bundle "justinmk/vim-syntax-extra"
 Bundle 'chase/vim-ansible-yaml'
 Bundle '2072/PHP-Indenting-for-VIm'
 "Bundle 'tpope/vim-rails'

@@ -290,6 +290,7 @@ nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 nnoremap <leader>gd :YcmCompleter GoToDeclaration<CR>
 
 let g:ycm_key_invoke_completion = '<C-Space>'
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 
 "YCM BLACK list
 let g:ycm_filetype_blacklist = {
@@ -439,6 +440,19 @@ let b:ale_linters = ['pylint']
 if executable('flake8')
     let b:ale_linters = ['flake8', 'pylint']
 endif
+
+
+" Clang format
+let g:clang_format#code_style = "llvm"
+let g:clang_format#style_options = {
+            \ "TabWidth": "Never",
+            \ "IndentWidth": 4,
+            \ "Standard": "C++11",
+            \ "BreakBeforeBraces": "Linux"}
+
+" map to <Leader>cf in C++ code
+autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
+autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
 
 
 "fix macvim bug
